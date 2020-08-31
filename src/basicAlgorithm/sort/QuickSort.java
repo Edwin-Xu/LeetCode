@@ -2,6 +2,7 @@ package basicAlgorithm.sort;
 
 /**
  * Created by Edwin Xu on 6/3/2020 7:46 PM
+ *
  */
 public class QuickSort {
 
@@ -73,13 +74,44 @@ public class QuickSort {
 
 
 
+    /*
+    * 快排的思路在于：对于一个数，将小于它的移动到左边，大于它的移动到右边。
+    *
+    * */
+
+    public void qs_review(int [] nums,int left,int right){
+        int L = left;
+        int R = right;
+        if (L<R){
+            int tmp = nums[L];
+            while(L<R){
+                while (L<R && nums[R]>=tmp)R--;
+                nums[L] = nums[R];
+                while (L<R && nums[L]<=tmp)L++;
+                nums[R] = nums[L];
+            }
+            nums[L] = tmp;
+            qs_review(nums,left,L-1);
+            qs_review(nums,L+1,right);
+
+        }
+    }
+
 
     public static void main(String[] args) {
+        QuickSort quickSort = new QuickSort();
+
         int arr[] = new Util(100).getArr();
-        new QuickSort().qs(arr,0,arr.length-1);
+        quickSort.qs(arr,0,arr.length-1);
         Util.print(arr);
-        new QuickSort().quick(arr,0,arr.length-1);
+
+//        quickSort.quick(arr,0,arr.length-1);
+//        Util.print(arr);
+
+        quickSort.qs_review(arr,0,arr.length-1);
         Util.print(arr);
+
+
 
 
     }

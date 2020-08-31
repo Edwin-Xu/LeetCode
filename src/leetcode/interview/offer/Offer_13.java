@@ -27,9 +27,40 @@ package leetcode.interview.offer;
  * 另外有个地推算法，需要了解
  */
 public class Offer_13 {
+    /*
+    dfs
+    */
+    private boolean[][] visited;
     public int movingCount(int m, int n, int k) {
+        visited = new boolean[m][n];
+        return dfs(0,0,m,n,k);
+    }
+    private int dfs(int i,int j,int m ,int n,int k){
+        if(i<0 || i>=m || j<0 || j>=n || visited[i][j])return 0;
+        //数位之和>k
+        int sum = 0;
+        int x = i,y=j;
+        for (int l = 0; l < 3; l++) {
+            sum+=x%10;
+            sum+=y%10;
+            x /= 10;
+            y /= 10;
+        }
+        if (sum>k)return 0;
+
+        visited[i][j] =true;
+        return 1+
+                dfs(i+1,j,m,n,k)
+//                +dfs(i-1,j,m,n,k) 只需要向下 向右即可
+//                +dfs(i,j-1,m,n,k)
+                +dfs(i,j+1,m,n,k);
+    }
 
 
-        return 0;
+
+    public static void main(String[] args) {
+        boolean[] booleans = new boolean[1];
+        System.out.println(booleans[0]);
+
     }
 }

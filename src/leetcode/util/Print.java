@@ -21,10 +21,15 @@ public class Print {
         treeInOrderPrint(t.left);
         treeInOrderPrint(t.right);
     }
-    public static <T> void printArr(T[] objects){
-        for (T o:objects){
-            System.out.print(o+" ");
+    public static void printArr(int[] objects){
+        if (objects.length==0) {
+            System.out.println("printArr: len=0 ");
+            return;
         }
+        for (int i=0;i<objects.length-1;i++){
+            System.out.print(objects[i]+" , ");
+        }
+        System.out.println(objects[objects.length-1]);
     }
 
     public static void layerTraversal(TreeNode root) {

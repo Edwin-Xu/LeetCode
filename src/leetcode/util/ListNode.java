@@ -7,6 +7,30 @@ public class ListNode {
     public int val;
     public    ListNode next;
     public ListNode(int x) { val = x; }
+
+    /*
+    * "1,2,3"
+    * */
+    public static ListNode getList(String s){
+        String [] arr = s.split(",");
+        ListNode head = new ListNode(Integer.valueOf(arr[0]));
+        ListNode cur = head;
+        for (int i = 1; i <arr.length ; i++) {
+            cur.next = new ListNode(Integer.valueOf(arr[i]));
+            cur = cur.next;
+        }
+        return head;
+    }
+
+    public static void printList(String msg, ListNode head){
+        System.out.print(msg+" : ");
+        ListNode cur =head;
+        while (cur!=null){
+            System.out.print(cur.val +" ");
+            cur = cur.next;
+        }
+        System.out.println();
+    }
 }
 
 

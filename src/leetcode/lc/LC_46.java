@@ -6,18 +6,18 @@ import java.util.*;
  * Created by Edwin Xu on 8/8/2020 5:28 PM
  * 46. 全排列
  * 给定一个 没有重复 数字的序列，返回其所有可能的全排列。
- *
+ * <p>
  * 示例:
- *
+ * <p>
  * 输入: [1,2,3]
  * 输出:
  * [
- *   [1,2,3],
- *   [1,3,2],
- *   [2,1,3],
- *   [2,3,1],
- *   [3,1,2],
- *   [3,2,1]
+ * [1,2,3],
+ * [1,3,2],
+ * [2,1,3],
+ * [2,3,1],
+ * [3,1,2],
+ * [3,2,1]
  * ]
  */
 
@@ -37,32 +37,32 @@ import java.util.*;
 // */
 public class LC_46 {
     /*
-    * 递归求解，每次选择一个数，然后求解剩下的组合。
-    *
-    * 实际上是一个回溯，不过复制数组花了过多时间
-    *
-    * */
+     * 递归求解，每次选择一个数，然后求解剩下的组合。
+     *
+     * 实际上是一个回溯，不过复制数组花了过多时间
+     *
+     * */
     public List<List<Integer>> permute(int[] nums) {
         List<Integer> sourceList = new LinkedList<>();
-        for (int i:nums)sourceList.add(i);
+        for (int i : nums) sourceList.add(i);
         return getSubList(sourceList);
     }
-    private List<List<Integer>>  getSubList(List<Integer> sourceList){
+
+    private List<List<Integer>> getSubList(List<Integer> sourceList) {
         List<List<Integer>> res = new ArrayList<>();
-        if (sourceList.size()==0)return res;
-        else if (sourceList.size()==1){
+        if (sourceList.size() == 0) return res;
+        else if (sourceList.size() == 1) {
             ArrayList<Integer> list = new ArrayList<>();
             list.add(sourceList.get(0));
             res.add(list);
-        }
-        else{
-            for (int i:sourceList){ //每次选中一个，递归下去
+        } else {
+            for (int i : sourceList) { //每次选中一个，递归下去
                 List<Integer> source = new LinkedList<>();
                 source.addAll(sourceList);
                 source.remove((Integer) i);
 
                 List<List<Integer>> subRes = getSubList(source);
-                for (List<Integer> arrayList: subRes){
+                for (List<Integer> arrayList : subRes) {
                     ArrayList<Integer> list = new ArrayList<>();
                     list.add(i);
                     list.addAll(arrayList);
@@ -76,11 +76,11 @@ public class LC_46 {
 
 
     /*
-    * 上面回溯的优化
-    *
-    * 性能也不咋地，比上面要好一些
-    * */
-    class realBack{
+     * 上面回溯的优化
+     *
+     * 性能也不咋地，比上面要好一些
+     * */
+    class realBack {
         List<List<Integer>> res = new LinkedList<>();
 
         /* 主函数，输入一组不重复的数字，返回它们的全排列 */
@@ -118,10 +118,41 @@ public class LC_46 {
 
     public static void main(String[] args) {
         LC_46 lc_46 = new LC_46();
-        int a[] = {1,2,3};
+        int a[] = {1, 2, 3,4};
         List<List<Integer>> res = lc_46.permute(a);
-        for (List<Integer> x: res){
+        for (List<Integer> x : res) {
             System.out.println(x);
         }
     }
+
+
+
+    //----------------------------------------------------------------------------
+// 更好的全排列求解法：递归+范围
+
+    private List<List<Integer>> res= new LinkedList<>();
+    public List<List<Integer>> permute_mine(int[] nums) {
+        List<Integer> list = new ArrayList<>(100);
+        for (int n:nums)list.add(n);
+        perm(list,0,nums.length-1);
+        return res;
+    }
+    private void perm(List<Integer> list, int start,int end){
+        if (start==end){
+            res.add(new ArrayList<>(list));
+            return;
+        }
+        for (int i = start; i <=end ; i++) {
+            swap(list,i,start);
+            perm(list,start+1,end);
+            swap(list,i,start);
+        }
+    }
+    private void swap(List<Integer> list,int i,int j){
+        int tmp = list.get(i);
+        list.set(i,list.get(j));
+        list.set(j,tmp);
+    }
+
+
 }

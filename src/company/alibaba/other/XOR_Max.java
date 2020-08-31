@@ -1,4 +1,4 @@
-package company.alibaba;
+package company.alibaba.other;
 
 /**
  * Created by Edwin Xu on 7/25/2020 12:50 PM

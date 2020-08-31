@@ -63,8 +63,17 @@ public class LC_69 {
     /*
     * 牛顿迭代法
     *
+    * x2=a
+    * fx = x2-a
     *
     * */
+    public int mySqrt_newton_iteration(int a){
+        double x = a;
+        for(int i =0;i<30;i++){
+            x = x- (x*x-a)/(x*2);
+        }
+        return (int)x;
+    }
 
 
     public static void main(String[] args) {

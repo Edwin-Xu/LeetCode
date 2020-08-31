@@ -1,6 +1,4 @@
-package company.alibaba;
-
-import java.util.Arrays;
+package company.alibaba.other;
 
 /**
  * Created by Edwin Xu on 7/21/2020 8:14 PM
