@@ -1,4 +1,4 @@
-package datastructure;
+package datastructure.tree;
 
 import leetcode.util.Print;
 import leetcode.util.TreeNode;

@@ -10,9 +10,19 @@ public class Print {
     public static void print(Object...objects){
         for (Object o:objects){
             System.out.print(o);
-            System.out.print(", ");
+            System.out.print("\t");
         }
         System.out.println();
+    }
+    public static void print(ListNode head){
+        ListNode cur = head;
+        StringBuilder sb = new StringBuilder();
+        while (cur!=null){
+            sb.append(cur.val);
+            sb.append(" ");
+            cur = cur.next;
+        }
+        System.out.println(sb.toString());
     }
 
     public static void treeInOrderPrint(TreeNode t){
@@ -27,10 +37,17 @@ public class Print {
             return;
         }
         for (int i=0;i<objects.length-1;i++){
-            System.out.print(objects[i]+" , ");
+            System.out.print(objects[i]+"\t");
         }
         System.out.println(objects[objects.length-1]);
     }
+
+    public static void printArr(int[][] objects){
+        for (int []obj: objects){
+            printArr(obj);
+        }
+    }
+
 
     public static void layerTraversal(TreeNode root) {
         Queue<TreeNode> q= new LinkedBlockingQueue<>();

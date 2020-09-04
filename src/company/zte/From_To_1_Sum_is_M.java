@@ -1,4 +1,4 @@
-package company.ZTE;
+package company.zte;
 
 import java.util.ArrayList;
 import java.util.List;

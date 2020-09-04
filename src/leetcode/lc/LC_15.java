@@ -73,7 +73,6 @@ public class LC_15 {
             while (left < right) {
                 if (nums[left] + nums[right] == target) {
                     ans.add(new ArrayList<>(Arrays.asList(nums[i], nums[left], nums[right])));
-
                     // 现在要增加 left，减小 right，但是不能重复，比如: [-2, -1, -1, -1, 3, 3, 3], i = 0, left = 1, right = 6, [-2, -1, 3] 的答案加入后，需要排除重复的 -1 和 3
                     left++; right--; // 首先无论如何先要进行加减操作
                     while (left < right && nums[left] == nums[left - 1]) left++;
