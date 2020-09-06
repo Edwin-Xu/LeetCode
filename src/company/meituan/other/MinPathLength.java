@@ -1,4 +1,4 @@
-package company.meituan;
+package company.meituan.other;
 
 import java.util.Scanner;
 

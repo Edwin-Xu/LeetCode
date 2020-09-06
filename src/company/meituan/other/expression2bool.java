@@ -1,4 +1,4 @@
-package company.meituan;
+package company.meituan.other;
 
 /**
  * Created by Edwin Xu on 4/3/2020 6:28 PM

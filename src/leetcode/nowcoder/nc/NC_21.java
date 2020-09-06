@@ -3,6 +3,8 @@ package leetcode.nowcoder.nc;
 import leetcode.util.ListNode;
 import leetcode.util.Print;
 
+import java.util.ArrayList;
+
 /**
  * Created by Edwin Xu on 9/4/2020 10:38 PM
  */
@@ -61,35 +63,44 @@ public class NC_21 {
     public ListNode reverse2(ListNode head,int m,int n){
         //修改头插法
         if (m>=n)return head;
-
-        System.out.println(m+" "+n);
-
-
         ListNode dummy = new ListNode(0);
         dummy.next = head;
 
         ListNode cur = dummy;
         ListNode mHead = null;//m的前一个
 
+        ListNode nTail=null;
+
         int cnt = 0;
         while(cur!=null){
-            Print.print("cur.val:",cur.val,"cnt:", cnt);
+//            Print.print("cur.val:",cur.val,"cnt:", cnt);
 
             if(cnt<m){ //找到m的前一个，作为头插法的节点
                 mHead = cur;
                 cur = cur.next;
-                mHead.next = null;
-                System.out.println(mHead.val);
+                nTail = mHead.next;
+
             }
-            else if (cnt<n) { //开始头插
+            else if(cnt==m){
+                mHead.next = null;
+            }
+            else if (cnt<=n) { //开始头插
+//                Print.print("插： ",cur.val);
 
                 ListNode tmp = mHead.next;
                 mHead.next = cur;
                 cur = cur.next;
                 mHead.next.next = tmp;
 
+                Print.print(mHead);
+
+
             }else { //头插完毕
+//                System.out.println("tail: "+ nTail.val+" "+cur.val);
+                nTail.next = cur;
+//                Print.print(mHead);
                 break;
+
             }
 
             cnt++;
@@ -102,15 +113,35 @@ public class NC_21 {
     public static void main(String[] args) {
         ListNode head = new ListNode(1);
         head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
+//        head.next.next = new ListNode(3);
+//        head.next.next.next = new ListNode(4);
+//        head.next.next.next.next = new ListNode(5);
 
-        ListNode res = new NC_21().reverse2(head,2,4);
+        ListNode res = new NC_21().reverse2(head,1,2);
 
         Print.print(res);
 
 
+
     }
 
+
+    public ListNode reverseBetween_not_over(ListNode head, int m, int n) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode preStart = dummy;
+        ListNode start = head;
+        for (int i = 1; i < m; i ++ ) {
+            preStart = start;
+            start = start.next;
+        }
+        // reverse
+        for (int i = 0; i < n - m; i ++ ) {
+            ListNode temp = start.next;
+            start.next = temp.next;
+            temp.next = preStart.next;
+            preStart.next = temp;
+        }
+        return dummy.next;
+    }
 }
