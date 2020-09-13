@@ -1,5 +1,6 @@
 package leetcode.util;
 
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -47,6 +48,21 @@ public class Print {
             printArr(obj);
         }
     }
+
+    public static  void printList(List<Integer> list ){
+        for (int t: list){
+            System.out.print(t);
+            System.out.print("\t");
+        }
+        System.out.println();
+    }
+    public static void printListList(List<List<Integer>> list ){
+        for (List<Integer> t: list){
+            printList(t);
+        }
+        System.out.println();
+    }
+
 
 
     public static void layerTraversal(TreeNode root) {

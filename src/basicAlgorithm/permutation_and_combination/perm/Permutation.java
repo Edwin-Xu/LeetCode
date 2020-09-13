@@ -1,8 +1,6 @@
-package basicAlgorithm.permutation_and_combination;
+package basicAlgorithm.permutation_and_combination.perm;
 
 import leetcode.util.Print;
-
-import java.util.Scanner;
 
 /**
  * Created by Edwin Xu on 8/28/2020 10:18 PM
@@ -13,10 +11,47 @@ import java.util.Scanner;
 * */
 public class Permutation {
 
+
+
     /*
-    * 迭代方法
-    * 复杂度过高
+    * 递归方法
+    * 不使用复制来进行递归
+    *
+    * 递归+交换数字
     * */
+    static void perm(int a[], int start, int end) {
+        Print.printArr(a);
+        if (start == end) {
+            for (int i : a) System.out.print(i);
+            System.out.println();
+            return;
+        }
+        for (int i = start; i <= end; i++) {
+            swap(a, i, start); //这个地方swap，实际上就是把从start+1-end中选一个出来：i
+            perm(a, start + 1, end);
+            swap(a, i, start);//递归结束后还回去
+        }
+    }
+    static void swap(int arr[], int i, int j) {
+        int te = arr[i];
+        arr[i] = arr[j];
+        arr[j] = te;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    /*
+     * 迭代方法
+     * 复杂度过高
+     * */
     public void permutation1(){
         int a[] = {1, 2, 3, 4};
         int b[] = new int[a.length];
@@ -44,44 +79,6 @@ public class Permutation {
             }
 
     }
-
-
-
-
-
-
-
-    /*
-    * 递归方法
-    * 不使用复制来进行递归
-    *
-    * 递归+交换数字
-    * */
-    static void perm(int a[], int start, int end) {
-        Print.printArr(a);
-        if (start == end) {
-            for (int i : a) System.out.print(i);
-            System.out.println();
-            return;
-        }
-        for (int i = start; i <= end; i++) {
-            swap(a, i, start); //这个地方swap，实际上就是把从start+1-end中选一个出来：i
-            perm(a, start + 1, end);
-            swap(a, i, start);//递归结束后还回去
-        }
-    }
-    static void swap(int arr[], int i, int j) {
-//        System.out.println("交换 "+arr[i]+" "+arr[j]);
-        int te = arr[i];
-        arr[i] = arr[j];
-        arr[j] = te;
-    }
-
-
-
-
-
-
 
 
 
