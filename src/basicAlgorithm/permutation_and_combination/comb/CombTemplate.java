@@ -28,6 +28,7 @@ public class CombTemplate {
         }
         //剪枝：如果剩余的不足，直接跳出
         if (n - start < k - list.size()) return;
+
         for (int i = start; i < n; i++) {
             list.add(nums[i]);
             comb(nums, i + 1, list);
