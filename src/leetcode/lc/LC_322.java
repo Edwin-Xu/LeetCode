@@ -114,8 +114,8 @@ public class LC_322 {
 
 
     // 官方：自下而上 15MS
-    // 上面的顶多算个递归思路
-    // 这里才是经典的动态规划
+    // 上面的顶多算个递归思路,不，也是动态规划，不过是自顶向下
+    // 这里才是经典的动态规划：自底向上
     public int coinChange(int[] coins, int amount) {
         int max = amount + 1;
         int[] dp = new int[amount + 1];
@@ -130,8 +130,23 @@ public class LC_322 {
         }
         return dp[amount] > amount ? -1 : dp[amount];
     }
-
-
+    /*
+    * 分析一下两个动态规划解法：
+    * - 自顶向下：
+    *   使用递归，如果结合备忘录，可以避免子问题。
+    *   时间：最坏情况下，计算1-amount的子问题，O(N)复杂度
+    *   空间：备忘录需要O(N)，递归需要O(N)， O(2N)
+    * - 自底向上：
+    *   使用一个dp[amount]数组, 计算1-amount的所有子问题
+    *   时间:O(M*N)。即内外循环，理论上比自顶向下O(N)要差一些。
+    *   空间:O(N)。比O(2N)要好
+    *
+    *   不对，自顶向下时间复杂度也是O(N*M)
+    *
+    *   另外：
+    *   如果金币种类少，但是amount特别大，不适合自底向上：会使用很大的数组。
+    *
+    * */
 
 
     public static void main(String[] args) {
