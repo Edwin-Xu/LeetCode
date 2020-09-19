@@ -1,6 +1,7 @@
 package company.fanruan;
 
 import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
 
 /*
  * 给出多个<k,v>升序链表
@@ -125,6 +126,12 @@ public class Main {
 
     public static void main(String[] args) {
         new Main();
+//        int is;
+//        int res ;
+//        is = res =1;
+//        System.out.println(is+" "+res);
+//
+
     }
 }
 

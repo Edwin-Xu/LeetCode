@@ -6,7 +6,13 @@ import java.util.HashMap;
 
 /**
  * Created by Edwin Xu on 9/17/2020 11:28 PM
+ *
+ * 最长不重复序列
+ *
+ *
  */
+
+
 public class NC_41 {
     public int maxLength (int[] arr) {
         HashMap<Integer,Integer> map = new HashMap<>();
