@@ -1,5 +1,7 @@
 package leetcode.nowcoder.nc;
 
+import java.util.Map;
+
 /**
  * Created by Edwin Xu on 9/22/2020 9:44 PM
  *
@@ -37,5 +39,11 @@ public class NC_30 {
         int temp=arr[i];
         arr[i]=arr[j];
         arr[j]=temp;
+    }
+
+
+    public static void main(String[] args) {
+        Map map;
+        Map.
     }
 }
