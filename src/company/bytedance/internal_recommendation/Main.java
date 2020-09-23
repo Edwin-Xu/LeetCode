@@ -1,4 +1,4 @@
-package company.bytedance;
+package company.bytedance.internal_recommendation;
 
 /**
  * Created by Edwin Xu on 7/23/2020 6:29 PM
@@ -6,7 +6,6 @@ package company.bytedance;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 /*
 * fork的原理
