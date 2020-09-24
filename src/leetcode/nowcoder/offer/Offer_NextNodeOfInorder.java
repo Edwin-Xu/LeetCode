@@ -1,4 +1,4 @@
-package leetcode.nowcoder;
+package leetcode.nowcoder.offer;
 
 import leetcode.util.TreeLinkNode;
 

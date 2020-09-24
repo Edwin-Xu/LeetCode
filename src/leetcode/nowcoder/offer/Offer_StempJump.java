@@ -1,4 +1,4 @@
-package leetcode.nowcoder;
+package leetcode.nowcoder.offer;
 
 /**
  * Created by Edwin Xu on 6/24/2020 6:44 PM

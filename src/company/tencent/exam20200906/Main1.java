@@ -69,8 +69,8 @@ AC:
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-public class Main {
-    public Main(){
+public class Main1 {
+    public Main1(){
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         Map<Integer,Integer> map = new HashMap<>();
@@ -96,7 +96,7 @@ public class Main {
     }
     public static void main(String[] args) {
 
-        new Main();
+        new Main1();
     }
 }
 

@@ -8,7 +8,7 @@ public class KMP{
         int j = 0;
         int k = -1;
         int [] next = new int[pat.length()];
-        next[0] = -1;
+        next[0] = -1;  //这里置为 -1，表示无
 
         while( j<pat.length()-1 ){
             if(k==-1 || pat.charAt(k)==pat.charAt(j)){

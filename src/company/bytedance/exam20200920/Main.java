@@ -36,6 +36,6 @@ public class Main {
         for (int i = 0; i < 10; i++) {
             System.out.println((2*i )^(2*i+1) );
         }
-//        new Main();
+//        new Main1();
     }
 }

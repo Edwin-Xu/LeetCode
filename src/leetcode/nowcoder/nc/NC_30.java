@@ -43,7 +43,5 @@ public class NC_30 {
 
 
     public static void main(String[] args) {
-        Map map;
-        Map.
     }
 }

@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class Main {
     /*
-    public Main() {
+    public Main1() {
         Scanner scanner = new Scanner(System.in);
         StringBuilder sb = new StringBuilder();
         String s = scanner.nextLine();

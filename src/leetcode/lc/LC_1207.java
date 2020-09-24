@@ -31,7 +31,6 @@ public class LC_1207 {
         for(int a: arr)map.merge(a,1,Integer::sum);
         Set<Integer> set = new HashSet<>();
         for(Map.Entry<Integer,Integer> e: map.entrySet()){
-            // System.out.println(e.getKey()+" "+ e.getValue());
             if(set.contains(e.getValue()))return false;
             set.add(e.getValue());
         }
