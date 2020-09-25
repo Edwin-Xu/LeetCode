@@ -15,6 +15,8 @@ public class LC_783 {
     于是我使用一个isFirst标志位
 
 
+    //面试体验不好，面试官也是无语，对不上号，都没给反问，挂了
+
     */
     public int minDiffInBST(TreeNode root) {
         inOrder(root);
@@ -37,5 +39,17 @@ public class LC_783 {
 
         inOrder(root.right);
 
+    }
+
+
+    public static void main(String[] args) {
+        int a = Integer.MIN_VALUE;
+        int b = Integer.MAX_VALUE;
+        System.out.println(a);
+        System.out.println(b);
+
+        System.out.println(10-a);
+        System.out.println(10-(-2147483648));
+        System.out.println(10+a);
     }
 }
