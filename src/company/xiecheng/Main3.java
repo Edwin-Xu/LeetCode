@@ -2,10 +2,10 @@ package company.xiecheng;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main3 {
     int M,N,E0,X,L;
     int [][]map;
-    public Main(){
+    public Main3(){
         Scanner scanner = new Scanner(System.in);
         M  =scanner.nextInt();
         N =scanner.nextInt();
@@ -41,6 +41,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-        new Main();
+        new Main3();
     }
 }
