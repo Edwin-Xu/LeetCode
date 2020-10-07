@@ -21,29 +21,44 @@ import java.util.*;
  */
 
 public class LC_17 {
+    List<String> res = new LinkedList<>();
+    char[][] chs = {
+            {'a', 'b', 'c'},
+            {'d', 'e', 'f'},
+            {'g', 'h', 'i'},
+            {'j', 'k', 'l'},
+            {'m', 'n', 'o'},
+            {'p', 'q', 'r', 's'},
+            {'t', 'u', 'v'},
+            {'w', 'x', 'y', 'z'}
+    };
+
     public List<String> letterCombinations(String digits) {
-        List<String> res = new LinkedList<>();
-        char[][] chs = {
-                {'a', 'b', 'c'},
-                {'d','e','f'},
-                {'g','h','i'},
-                {'j','k','l'},
-                {'m','n','o'},
-                {'p','q','r','s'},
-                {'t','u','v'},
-                {'w','x','y','z'}
-        };
-        char [] digitChs = digits.toCharArray();
-        //接下来需要计算组合数了
-
+        if(digits.length()==0)return res;
+        combine(digits, 0, new StringBuilder());
         return res;
-
     }
 
-//    private void combine()
+    private void combine(String digits, int index, StringBuilder sb) {
+        if (sb.length() == digits.length()) {
+            res.add(sb.toString());
+            return;
+        }
+        for (char c : chs[digits.charAt(index) - '2']) {
+            sb.append(c);
+            combine(digits, index + 1, sb);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+    }
+
 
     public static void main(String[] args) {
-        char [] chs = new char[2];
-        System.out.println(chs[0]+"--"+(int)chs[0]);
+        LC_17 lc_17 = new LC_17();
+        List<String> res = lc_17.letterCombinations("23");
+        for (String s : res) {
+            System.out.print(s + " ");
+        }
+
+
     }
 }
