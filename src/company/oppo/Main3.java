@@ -14,8 +14,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Main3 {
     /*
      * 方法2：Synchronized
+     * 一把锁+一个条件变量
      * */
-
     static int cond = 0;
     public static void main(String[] args) {
         Integer lock = new Integer(1);

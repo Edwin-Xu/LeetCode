@@ -2,7 +2,9 @@ package leetcode.lc;
 
 import leetcode.util.Print;
 
+import java.util.Hashtable;
 import java.util.Set;
+import java.util.Vector;
 
 /**
  * Created by Edwin Xu on 10/2/2020 7:52 PM.

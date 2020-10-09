@@ -19,7 +19,6 @@ public class Main2 {
         Thread threadA = new Thread(new Runnable() {
             @Override
             public void run() {
-
                 synchronized (Lock){
                     try {
                         while (true) {
