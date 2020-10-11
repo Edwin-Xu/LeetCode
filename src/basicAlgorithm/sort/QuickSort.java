@@ -5,8 +5,6 @@ package basicAlgorithm.sort;
  *
  */
 public class QuickSort {
-
-
     public void quick(int[] arr,int left,int right){
         int R = right;
         int L = left;
