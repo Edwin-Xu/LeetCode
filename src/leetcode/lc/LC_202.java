@@ -37,7 +37,7 @@ public class LC_202 {
 
 set用来检测循环？？
 */
-    public boolean isHappy(int n) {
+    public boolean isHappy_1(int n) {
         for (int i = 0; i < 20; i++) {
             if (n == 1) return true;
             int sum = 0;
@@ -55,4 +55,25 @@ set用来检测循环？？
     * 其他方式
     * https://leetcode-cn.com/problems/happy-number/solution/kuai-le-shu-by-leetcode-solution/
     * */
+
+    public boolean isHappy(int n) {
+        Set<Integer> set = new HashSet<>();
+
+        do {
+            set.add(n);
+
+            if (n == 1) return true;
+            int sum = 0;
+            int m = n;
+            for (int j = 0; j < 10; j++) {
+                int r = m % 10;
+                sum += (r * r);
+                m /= 10;
+            }
+            n = sum;
+        } while (!set.contains(n));
+        return false;
+
+    }
+
 }
