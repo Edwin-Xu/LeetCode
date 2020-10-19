@@ -22,6 +22,7 @@ import java.util.*;
  *   \
  *    2
  * 输出: 1
+ *
  */
 
 public class LC_230 {

@@ -72,7 +72,7 @@ public class LC_24 {
 
 
     /*
-    *
+    *递归解决
     * */
     public ListNode swapPairs_(ListNode head) {
         if(head == null || head.next == null){
@@ -83,6 +83,11 @@ public class LC_24 {
         next.next = head;
         return next;
     }
+
+
+//其他思路：
+//开一个新节点，然后没两个遍历原链表，分别加到新节点末尾。
+
 
     public ListNode swapPairs__(ListNode head) {
         ListNode pre = new ListNode(0);
