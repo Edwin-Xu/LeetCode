@@ -48,8 +48,5 @@ public class P1061 {
             arr[i] = sc.nextInt();
         }
         sc.close();
-
-
-
     }
 }
