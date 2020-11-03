@@ -1,4 +1,4 @@
-package leetcode.company;
+package company.neteasy;
 
 import java.util.*;
 
