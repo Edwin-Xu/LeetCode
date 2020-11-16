@@ -22,8 +22,10 @@ import java.util.Map;
  *
  */
 public class Offer_56_2 {
-    //HashMap
-    public int singleNumber_hash(int[] nums) {
+    /**
+    HashMap
+    */
+    public int singleNumberByHash(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int n : nums) {
             map.merge(n, 1, (a, b) -> {
@@ -39,7 +41,9 @@ public class Offer_56_2 {
     }
 
 
-    //位运算
+    /**
+     * 位运算
+     * */
     public int singleNumber(int[] nums) {
         int ones = 0, twos = 0;
         for(int num : nums){
