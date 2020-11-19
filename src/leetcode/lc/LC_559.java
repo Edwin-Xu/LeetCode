@@ -11,7 +11,7 @@ import java.util.List;
  *
  * 例如，给定一个 3叉树 :
  */
-public class LC_559_NTreeMaxDepth {
+public class LC_559 {
     public int maxDepth(Node root) {
         if (root==null)return 0;
         if (root.children.size()==0)return 1;
@@ -55,7 +55,7 @@ public class LC_559_NTreeMaxDepth {
 //        ？？？？？？？？？？？？？？
 //        为什么是true
 
-        System.out.println(LC_559_NTreeMaxDepth.f()==LC_559_NTreeMaxDepth.f());
+        System.out.println(LC_559.f()== LC_559.f());
 /*
 * 为什么？？
 * 自动拆箱？？？
