@@ -45,6 +45,10 @@ import java.util.*;
  * -231 <= xstart < xend <= 231 - 1
  */
 
+/**
+*
+* 这题还需要一定的思考
+* */
 public class LC_452 {
     /**
      * 贪心：
@@ -52,14 +56,25 @@ public class LC_452 {
      *   先排序，
      * */
     public int findMinArrowShots(int[][] points) {
-        Arrays.sort(points, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return Integer.compare(o1[0], o2[0]);
+        if (points==null || points.length==0){
+            return 0;
+        }
+        // 按 区间末端排序
+        Arrays.sort(points, Comparator.comparingInt(a -> a[1]));
+        int count = 0;
+        int i = 0;
+        while (i< points.length ){
+            int right = points[i][1];
+            i++;
+            // 后面的区间也和当前区间有交集。
+            while (i<points.length && points[i][0] <=right){
+                i++;
             }
-        });
+            count++;
+        }
 
-
-        return 0;
+        return count;
     }
+
+
 }
