@@ -3,17 +3,14 @@ package basic_algorithm.permutation_and_combination.perm;
 import leetcode.util.Print;
 
 /**
- * Created by Edwin Xu on 8/28/2020 10:18 PM
- */
-
-/*
 * 全排列
-* */
+*
+ * @author EdwinXu
+ *
+ * */
 public class Permutation {
 
-
-
-    /*
+    /**
     * 递归方法
     * 不使用复制来进行递归
     *
