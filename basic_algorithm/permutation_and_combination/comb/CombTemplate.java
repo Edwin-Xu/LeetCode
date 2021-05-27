@@ -9,11 +9,12 @@ import java.util.List;
 public class CombTemplate {
 
     /*
-    * C(n,k)
-    * */
+     * C(n,k)
+     * */
     private List<List<Integer>> output = new LinkedList();
     private int k;
     private int n;
+
     public List<List<Integer>> comb(int[] nums, int k) {
         n = nums.length;
         this.k = k;
