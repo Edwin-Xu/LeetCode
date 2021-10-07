@@ -41,7 +41,8 @@ public class LC_650 {
 
         @Override
         public boolean equals(Object obj) {
-            if (obj instanceof Node node){
+            if (obj instanceof Node){
+                Node node = (Node) obj;
                 return opNum == node.opNum && pasteNum == node.pasteNum;
             }
             return false;
