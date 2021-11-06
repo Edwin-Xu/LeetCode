@@ -2,6 +2,9 @@ package leetcode.lc;
 
 import leetcode.util.Print;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Created by Edwin Xu on 9/22/2020 6:59 PM
  * <p>
@@ -42,7 +45,7 @@ public class LC_407 {
          对于4：4的上下左右都是13，但是最低不是13，而是12:8-10-12
          所以4能装的水是12-4=8，而不是13-4=9
      * */
-    public int trapRainWater(int[][] heightMap) {
+    public int trapRainWater_(int[][] heightMap) {
         if (heightMap == null || heightMap.length == 0) return 0;
         int row = heightMap.length;
         int col = heightMap[0].length;
@@ -129,4 +132,51 @@ public class LC_407 {
         LC_407 lc_407 = new LC_407();
         lc_407.trapRainWater(arr);
     }
+
+
+
+
+    int H = 0;;
+    int W = 0;
+    public int trapRainWater(int[][] h) {
+         W = h.length;
+         H = h[0].length;
+        for(int i = 1; i < W -1 ;i++){
+            for (int j = 1; j < H -1 ; j++){
+
+            }
+        }
+        return 0;
+    }
+
+    public static class P{
+        int x;
+        int y;
+        public P(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
+
+        @Override
+        public boolean equals(Object object) {
+            P obj = (P)object;
+            return x == obj.x && y == obj.y;
+        }
+
+        @Override
+        public int hashCode() {
+            return x*x + y*y*y;
+        }
+        public static P of(int x_, int y_){
+            return new P(x_, y_);
+        }
+    }
+    private int handleOne(int[][] h, int x, int y){
+        Set<P> set = new HashSet<>();
+        set.add(new P(x, y));
+
+        return 0;
+    }
+
+
 }
